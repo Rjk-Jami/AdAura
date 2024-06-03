@@ -6,6 +6,14 @@
     color: #fd4822;
 
 }
+.bg-p{
+    background-color: #fd4822;
+
+}
+.bg-p:hover{
+    background-color: #f73913;
+
+}
 .text-ad:hover{
     color: #fd4822;
 }

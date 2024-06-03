@@ -1,18 +1,19 @@
 import { Link, NavLink } from "react-router-dom";
-
 import React from "react";
 import useAuth from "../../../Components/hooks/useAuth";
-
+import { BsFillPersonFill } from "react-icons/bs";
+import { TbLogout2 } from "react-icons/tb";
+import { FiSettings } from "react-icons/fi";
 const Navbar = () => {
   const { user, logout } = useAuth();
-
+console.log(user)
   const handleLogout = () => {
     logout();
   };
 
-  const navbar = (
-    ""
-  );
+  const navbar = "";
+  const activeTrue = "relative text-[#fd4822] after:bg-[#fd4822] after:absolute after:h-[2px] after:-bottom-1 after:left-0 after:w-[55%]"
+  const activeFalse = " relative text-ad hover:after:bg-[#fd4822] hover:after:absolute hover:after:h-[2px] hover:after:bottom-[6px] hover:after:left-0 hover:after:w-[55%]"
   return (
     <div className="navbar bg-base-100 sticky top-0 md:px-16 px-5 z-10">
       <div className="navbar-start">
@@ -49,71 +50,137 @@ const Navbar = () => {
           </ul>
         </div>
         <NavLink to={"/"} className=" text-xl font-bold">
-          <span className="text-p font-extrabold">A</span>d<span className="text-p font-extrabold">A</span>ura
+          <span className="text-p font-extrabold">A</span>d
+          <span className="text-p font-extrabold">A</span>ura
         </NavLink>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="flex items-center gap-6 px-1 font-semibold">
           <li>
-          <NavLink className={({ isActive }) => isActive ? `relative text-[#fd4822] after:bg-[#fd4822] after:absolute after:h-[2px] after:-bottom-1 after:left-0 after:w-[55%] ` : `relative text-ad hover:after:bg-[#fd4822] hover:after:absolute hover:after:h-[2px] hover:after:bottom-[6px] hover:after:left-0 hover:after:w-[55%]`} to={"/"}>Home</NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? `${activeTrue} `
+                  : `relative text-ad hover:after:bg-[#fd4822] hover:after:absolute hover:after:h-[2px] hover:after:bottom-[6px] hover:after:left-0 hover:after:w-[55%]`
+              }
+              to={"/"}
+            >
+              Home
+            </NavLink>
           </li>
           <li>
-            <NavLink className={({ isActive }) => isActive ? `relative text-[#fd4822] after:bg-[#fd4822] after:absolute after:h-[2px] after:-bottom-1 after:left-0 after:w-[55%] ` : `relative text-ad hover:after:bg-[#fd4822] hover:after:absolute hover:after:h-[2px] hover:after:-bottom-1 hover:after:left-0 hover:after:w-[55%]`} to={"/services"}>Services</NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? `${activeTrue} `
+                  : `relative text-ad hover:after:bg-[#fd4822] hover:after:absolute hover:after:h-[2px] hover:after:-bottom-1 hover:after:left-0 hover:after:w-[55%]`
+              }
+              to={"/services"}
+            >
+              Services
+            </NavLink>
           </li>
           <li>
-          <NavLink className={({ isActive }) => isActive ? `relative text-[#fd4822] after:bg-[#fd4822] after:absolute after:h-[2px] after:-bottom-1 after:left-0 after:w-[55%] ` : `relative text-ad hover:after:bg-[#fd4822] hover:after:absolute hover:after:h-[2px] hover:after:-bottom-1 hover:after:left-0 hover:after:w-[55%]`} to={"/contact"}>Contact</NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? `${activeTrue} `
+                  : `relative text-ad hover:after:bg-[#fd4822] hover:after:absolute hover:after:h-[2px] hover:after:-bottom-1 hover:after:left-0 hover:after:w-[55%]`
+              }
+              to={"/contact"}
+            >
+              Contact
+            </NavLink>
           </li>
           <li>
-          <NavLink className={({ isActive }) => isActive ? `relative text-[#fd4822] after:bg-[#fd4822] after:absolute after:h-[2px] after:-bottom-1 after:left-0 after:w-[55%] ` : `relative text-ad hover:after:bg-[#fd4822] hover:after:absolute hover:after:h-[2px] hover:after:-bottom-1 hover:after:left-0 hover:after:w-[55%]`} to={"/aboutUs"}>About us</NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? `${activeTrue} `
+                  : `relative text-ad hover:after:bg-[#fd4822] hover:after:absolute hover:after:h-[2px] hover:after:-bottom-1 hover:after:left-0 hover:after:w-[55%]`
+              }
+              to={"/aboutUs"}
+            >
+              About us
+            </NavLink>
           </li>
           <li>
-          <NavLink className={({ isActive }) => isActive ? `relative text-[#fd4822] after:bg-[#fd4822] after:absolute after:h-[2px] after:-bottom-1 after:left-0 after:w-[55%] ` : `relative text-ad hover:after:bg-[#fd4822] hover:after:absolute hover:after:h-[2px] hover:after:-bottom-1 hover:after:left-0 hover:after:w-[55%]`} to={"/blog"}>Blog</NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? `${activeTrue} `
+                  : `relative text-ad hover:after:bg-[#fd4822] hover:after:absolute hover:after:h-[2px] hover:after:-bottom-1 hover:after:left-0 hover:after:w-[55%]`
+              }
+              to={"/blog"}
+            >
+              Blog
+            </NavLink>
           </li>
         </ul>
       </div>
 
-      <div className="navbar-end flex gap-4 ">{""}
-      <>
-      {user && user ? (
+      <div className="navbar-end flex gap-4 ">
+        {""}
         <>
-          <div>
-            <button
-              className="btn btn-ghost btn-link no-underline hover:no-underline px-0 text-black hover:font-bold md:w-16"
-              onClick={handleLogout}
-            >
-              Logout
-            </button>
-          </div>
-          <div>
-            <Link
-              to={"/dashboard"}
-              className="btn btn-ghost btn-link no-underline hover:no-underline px-0 text-black hover:font-bold md:w-16"
-            >
-              Dashboard
-            </Link>
-          </div>
-
-          <div className="avatar placeholder">
-            <div className="bg-neutral text-neutral-content rounded-full w-8">
-              <span>AS</span>
-            </div>
-          </div>
+          {user && user ? (
+            <>
+              
+              <div>
+                <Link
+                  to={"/dashboard"}
+                  className="relative text-ad hover:after:bg-[#fd4822] hover:after:absolute hover:after:h-[2px] hover:after:-bottom-1 hover:after:left-0 hover:after:w-[55%] font-semibold"
+                >
+                  Dashboard
+                </Link>
+              </div>
+{/*  dropdown-left dropdown-bottom */}
+              <div className="dropdown dropdown-hover dropdown-end">
+                {user && user?.photoURL ? <img src={user?.photoURL} tabIndex={0}
+                  role="button"
+                  className="btn btn-circle hover:bg-transparent bg-transparent border-none btn-sm  w-full  text-p" alt="" /> : <BsFillPersonFill
+                  tabIndex={0}
+                  role="button"
+                  className="btn btn-circle  btn-md md:btn-sm w-full p-2 text-p"
+                ></BsFillPersonFill>}
+                <ul
+                  tabIndex={0}
+                  className=" dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+                >
+                  <li className="w-auto">
+                    <NavLink
+                      to={"/EditProfile"}
+                      className="justify-start flex flex-row-reverse gap-2 items-center text-md text-ad cursor-pointer "
+                    >
+                      <FiSettings className="font-semibold  " />
+                      <p>Edit Profile</p>
+                    </NavLink>{" "}
+                  </li>
+                  <li className="w-auto">
+                    <div
+                      onClick={handleLogout}
+                      className="justify-start flex flex-row-reverse gap-2 items-center text-md text-ad cursor-pointer "
+                    >
+                      <TbLogout2 className="font-semibold  " />
+                      <p>logout</p>
+                    </div>{" "}
+                  </li>
+                </ul>
+                </div>
+            </>
+          ) : (
+            <>
+              <Link to={"/signUp"} className="text-p font-semibold ">
+                Sign Up
+              </Link>
+              <Link
+                to={"/login"}
+                className="py-2 rounded-sm font-semibold px-4 bg-[#fd4822] hover:bg-[#fd4622e0] text-white  "
+              >
+                Login
+              </Link>
+            </>
+          )}
         </>
-      ) : (<>
-        <Link
-          to={"/login"}
-          className="text-p font-semibold "
-        >
-          Sign Up
-        </Link>
-        <Link
-          to={"/signUp"}
-          className="py-2 rounded-sm font-semibold px-4 bg-[#fd4822] hover:bg-[#fd4622e0] text-white  "
-        >
-          Login
-        </Link>
-        </>)}
-    </>
       </div>
     </div>
   );
