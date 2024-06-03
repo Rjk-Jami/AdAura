@@ -4,59 +4,19 @@ import useAuth from "../../../Components/hooks/useAuth";
 import { BsFillPersonFill } from "react-icons/bs";
 import { TbLogout2 } from "react-icons/tb";
 import { FiSettings } from "react-icons/fi";
+import { GrView } from "react-icons/gr";
+
 const Navbar = () => {
   const { user, logout } = useAuth();
-console.log(user)
+  console.log(user);
   const handleLogout = () => {
     logout();
   };
-
-  const navbar = "";
-  const activeTrue = "relative text-[#fd4822] after:bg-[#fd4822] after:absolute after:h-[2px] after:-bottom-1 after:left-0 after:w-[55%]"
-  const activeFalse = " relative text-ad hover:after:bg-[#fd4822] hover:after:absolute hover:after:h-[2px] hover:after:bottom-[6px] hover:after:left-0 hover:after:w-[55%]"
-  return (
-    <div className="navbar bg-base-100 sticky top-0 md:px-16 px-5 z-10">
-      <div className="navbar-start">
-        <div className="dropdown">
-          <div tabIndex={0} role="button" className=" lg:hidden">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h8m-8 6h16"
-              />
-            </svg>
-          </div>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-          >
-            <li>
-              <a>All Recepies</a>
-            </li>
-            <li>
-              <a>About Us</a>
-            </li>
-            <li>
-              <a>Contact Us</a>
-            </li>
-          </ul>
-        </div>
-        <NavLink to={"/"} className=" text-xl font-bold">
-          <span className="text-p font-extrabold">A</span>d
-          <span className="text-p font-extrabold">A</span>ura
-        </NavLink>
-      </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="flex items-center gap-6 px-1 font-semibold">
-          <li>
+  const activeTrue =
+    "relative text-[#fd4822] after:bg-[#fd4822] after:absolute after:h-[2px] after:-bottom-1 after:left-0 md:after:w-[55%] after:w-[25%]";
+  
+  const navbar = <>
+  <li>
             <NavLink
               className={({ isActive }) =>
                 isActive
@@ -73,7 +33,7 @@ console.log(user)
               className={({ isActive }) =>
                 isActive
                   ? `${activeTrue} `
-                  : `relative text-ad hover:after:bg-[#fd4822] hover:after:absolute hover:after:h-[2px] hover:after:-bottom-1 hover:after:left-0 hover:after:w-[55%]`
+                  : `relative text-ad hover:after:bg-[#fd4822] hover:after:absolute hover:after:h-[2px] hover:after:-bottom-1 hover:after:left-0  ho1ver:after:w-[55%]`
               }
               to={"/services"}
             >
@@ -116,6 +76,43 @@ console.log(user)
               Blog
             </NavLink>
           </li>
+  </>
+
+  return (
+    <div className="navbar sticky top-0 md:px-16 px-5 z-10 w-full">
+      <div className="navbar-start">
+        <div className="dropdown">
+          <div tabIndex={0} role="button" className=" lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
+          </div>
+          <ul
+            tabIndex={0}
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+          >
+            {navbar}
+          </ul>
+        </div>
+        <NavLink to={"/"} className=" text-xl font-bold">
+          <span className="text-p font-extrabold">A</span>d
+          <span className="text-p font-extrabold">A</span>ura
+        </NavLink>
+      </div>
+      <div className="navbar-center hidden lg:flex">
+        <ul className="flex items-center gap-6 px-1 font-semibold">
+          {navbar}
         </ul>
       </div>
 
@@ -124,7 +121,6 @@ console.log(user)
         <>
           {user && user ? (
             <>
-              
               <div>
                 <Link
                   to={"/dashboard"}
@@ -133,19 +129,36 @@ console.log(user)
                   Dashboard
                 </Link>
               </div>
-{/*  dropdown-left dropdown-bottom */}
+              {/*  dropdown-left dropdown-bottom */}
               <div className="dropdown dropdown-hover dropdown-end">
-                {user && user?.photoURL ? <img src={user?.photoURL} tabIndex={0}
-                  role="button"
-                  className="btn btn-circle hover:bg-transparent bg-transparent border-none btn-sm  w-full  text-p" alt="" /> : <BsFillPersonFill
-                  tabIndex={0}
-                  role="button"
-                  className="btn btn-circle  btn-md md:btn-sm w-full p-2 text-p"
-                ></BsFillPersonFill>}
+                {user && user?.photoURL ? (
+                  <img
+                    src={user?.photoURL}
+                    tabIndex={0}
+                    role="button"
+                    className="btn btn-circle hover:bg-transparent bg-transparent border-none btn-sm  w-full  text-p"
+                    alt=""
+                  />
+                ) : (
+                  <BsFillPersonFill
+                    tabIndex={0}
+                    role="button"
+                    className="btn btn-circle  btn-md md:btn-sm w-full p-2 text-p"
+                  ></BsFillPersonFill>
+                )}
                 <ul
                   tabIndex={0}
                   className=" dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
                 >
+                  <li className="w-auto">
+                    <NavLink
+                      to={"/viewProfile"}
+                      className="justify-start flex flex-row-reverse gap-2 items-center text-md text-ad cursor-pointer "
+                    >
+                      <GrView className="font-semibold  " />
+                      <p>View Profile</p>
+                    </NavLink>{" "}
+                  </li>1
                   <li className="w-auto">
                     <NavLink
                       to={"/EditProfile"}
@@ -155,6 +168,7 @@ console.log(user)
                       <p>Edit Profile</p>
                     </NavLink>{" "}
                   </li>
+                  
                   <li className="w-auto">
                     <div
                       onClick={handleLogout}
@@ -165,7 +179,7 @@ console.log(user)
                     </div>{" "}
                   </li>
                 </ul>
-                </div>
+              </div>
             </>
           ) : (
             <>
