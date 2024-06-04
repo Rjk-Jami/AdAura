@@ -74,7 +74,7 @@ const Navbar = () => {
           }
           to={"/blog"}
         >
-          Blog
+          Packages
         </NavLink>
       </li>
     </>
@@ -161,7 +161,7 @@ const Navbar = () => {
                   </li>
                   <li className="w-auto">
                     <NavLink
-                      to={"/dashboard/editProfile"}
+                      to={`/dashboard/editProfile/${user?.email}`}
                       className="justify-start flex flex-row-reverse gap-2 items-center text-md text-ad cursor-pointer "
                     >
                       <FiSettings className="font-semibold  " />

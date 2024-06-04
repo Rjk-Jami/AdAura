@@ -16,7 +16,7 @@ useEffect(()=>{
 console.log(ads)
 
   return (
-    <div className="h-[50vh]">
+    <div className="">
       {Header("Packages", "Visit our Packages")}
 
       <div className="grid grid-cols-3 gap-6">
