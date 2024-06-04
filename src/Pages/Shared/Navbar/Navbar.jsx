@@ -14,72 +14,74 @@ const Navbar = () => {
   };
   const activeTrue =
     "relative text-[#fd4822] after:bg-[#fd4822] after:absolute after:h-[2px] after:-bottom-1 after:left-0 md:after:w-[55%] after:w-[25%]";
-  
-  const navbar = <>
-  <li>
-            <NavLink
-              className={({ isActive }) =>
-                isActive
-                  ? `${activeTrue} `
-                  : `relative text-ad hover:after:bg-[#fd4822] hover:after:absolute hover:after:h-[2px] hover:after:bottom-[6px] hover:after:left-0 hover:after:w-[55%]`
-              }
-              to={"/"}
-            >
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              className={({ isActive }) =>
-                isActive
-                  ? `${activeTrue} `
-                  : `relative text-ad hover:after:bg-[#fd4822] hover:after:absolute hover:after:h-[2px] hover:after:-bottom-1 hover:after:left-0  ho1ver:after:w-[55%]`
-              }
-              to={"/services"}
-            >
-              Services
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              className={({ isActive }) =>
-                isActive
-                  ? `${activeTrue} `
-                  : `relative text-ad hover:after:bg-[#fd4822] hover:after:absolute hover:after:h-[2px] hover:after:-bottom-1 hover:after:left-0 hover:after:w-[55%]`
-              }
-              to={"/contact"}
-            >
-              Contact
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              className={({ isActive }) =>
-                isActive
-                  ? `${activeTrue} `
-                  : `relative text-ad hover:after:bg-[#fd4822] hover:after:absolute hover:after:h-[2px] hover:after:-bottom-1 hover:after:left-0 hover:after:w-[55%]`
-              }
-              to={"/aboutUs"}
-            >
-              About us
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              className={({ isActive }) =>
-                isActive
-                  ? `${activeTrue} `
-                  : `relative text-ad hover:after:bg-[#fd4822] hover:after:absolute hover:after:h-[2px] hover:after:-bottom-1 hover:after:left-0 hover:after:w-[55%]`
-              }
-              to={"/blog"}
-            >
-              Blog
-            </NavLink>
-          </li>
-  </>
+
+  const navbar = (
+    <>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? `${activeTrue} `
+              : `relative text-ad hover:after:bg-[#fd4822] hover:after:absolute hover:after:h-[2px] hover:after:-bottom-1 hover:after:left-0 hover:after:w-[55%]`
+          }
+          to={"/"}
+        >
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? `${activeTrue} `
+              : `relative text-ad hover:after:bg-[#fd4822] hover:after:absolute hover:after:h-[2px] hover:after:-bottom-1 hover:after:left-0 hover:after:w-[55%]`
+          }
+          to={"/services"}
+        >
+          Services
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? `${activeTrue} `
+              : `relative text-ad hover:after:bg-[#fd4822] hover:after:absolute hover:after:h-[2px] hover:after:-bottom-1 hover:after:left-0 hover:after:w-[55%]`
+          }
+          to={"/contact"}
+        >
+          Contact
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? `${activeTrue} `
+              : `relative text-ad hover:after:bg-[#fd4822] hover:after:absolute hover:after:h-[2px] hover:after:-bottom-1 hover:after:left-0 hover:after:w-[55%]`
+          }
+          to={"/aboutUs"}
+        >
+          About us
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? `${activeTrue} `
+              : `relative text-ad hover:after:bg-[#fd4822] hover:after:absolute hover:after:h-[2px] hover:after:-bottom-1 hover:after:left-0 hover:after:w-[55%]`
+          }
+          to={"/blog"}
+        >
+          Blog
+        </NavLink>
+      </li>
+    </>
+  );
 
   return (
-    <div className="navbar sticky top-0 md:px-16 px-5 z-10 w-full">
+    <div className="navbar sticky top-0 md:px-16 px-5 z-10 w-full bg-white">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className=" lg:hidden">
@@ -111,9 +113,7 @@ const Navbar = () => {
         </NavLink>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="flex items-center gap-6 px-1 font-semibold">
-          {navbar}
-        </ul>
+        <ul className="flex items-center gap-6 px-1 font-semibold">{navbar}</ul>
       </div>
 
       <div className="navbar-end flex gap-4 ">
@@ -158,7 +158,7 @@ const Navbar = () => {
                       <GrView className="font-semibold  " />
                       <p>View Profile</p>
                     </NavLink>{" "}
-                  </li>1
+                  </li>
                   <li className="w-auto">
                     <NavLink
                       to={"/EditProfile"}
@@ -168,7 +168,7 @@ const Navbar = () => {
                       <p>Edit Profile</p>
                     </NavLink>{" "}
                   </li>
-                  
+
                   <li className="w-auto">
                     <div
                       onClick={handleLogout}
