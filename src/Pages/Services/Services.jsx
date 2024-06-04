@@ -21,11 +21,17 @@ const Services = () => {
           </p>
           <div className="flex flex-col gap-2 mt-4">
             <p className="flex items-center gap-2">
-              <FaCheckCircle className="text-p"/>
+              <FaCheckCircle className="text-p" />
               Quality Service Guarenty
             </p>
-            <p className="flex items-center gap-2"><FaCheckCircle className="text-p"/>ROI Based Digital Service</p>
-            <p className="flex items-center gap-2"><FaCheckCircle className="text-p"/>24/7 Customer Support</p>
+            <p className="flex items-center gap-2">
+              <FaCheckCircle className="text-p" />
+              ROI Based Digital Service
+            </p>
+            <p className="flex items-center gap-2">
+              <FaCheckCircle className="text-p" />
+              24/7 Customer Support
+            </p>
           </div>
         </div>
         {/* 2 */}
@@ -35,17 +41,25 @@ const Services = () => {
             Store Design and Development
           </h1>
           <p className="">
-          A Standard Store combination of technical expertise, creativity, and user-centric design principles. The process requires careful planning, attention to detail, and a deep understanding of the target audience in order to create a successful online store that is optimized for sales, customer satisfaction, and long-term growth.
-
-
+            A Standard Store combination of technical expertise, creativity, and
+            user-centric design principles. The process requires careful
+            planning, attention to detail, and a deep understanding of the
+            target audience in order to create a successful online store that is
+            optimized for sales, customer satisfaction, and long-term growth.
           </p>
           <div className="flex flex-col gap-2 mt-4">
             <p className="flex items-center gap-2">
-              <FaCheckCircle className="text-p"/>
+              <FaCheckCircle className="text-p" />
               Quality Service Guarenty
             </p>
-            <p className="flex items-center gap-2"><FaCheckCircle className="text-p"/>ROI Based Digital Service</p>
-            <p className="flex items-center gap-2"><FaCheckCircle className="text-p"/>24/7 Customer Support</p>
+            <p className="flex items-center gap-2">
+              <FaCheckCircle className="text-p" />
+              ROI Based Digital Service
+            </p>
+            <p className="flex items-center gap-2">
+              <FaCheckCircle className="text-p" />
+              24/7 Customer Support
+            </p>
           </div>
         </div>
         {/* 3 */}
@@ -55,17 +69,25 @@ const Services = () => {
             Sales & Brand oriented Content
           </h1>
           <p className="">
-          Content, taking various forms like blogs, social media updates, product descriptions, and ads, requires different content formats such as static design, motion graphics, and videos, all customized to engage and convert the target audience. As an agency, we offer tailored content strategies that drive growth and results.
-
-
+            Content, taking various forms like blogs, social media updates,
+            product descriptions, and ads, requires different content formats
+            such as static design, motion graphics, and videos, all customized
+            to engage and convert the target audience. As an agency, we offer
+            tailored content strategies that drive growth and results.
           </p>
           <div className="flex flex-col gap-2 mt-4">
             <p className="flex items-center gap-2">
-              <FaCheckCircle className="text-p"/>
+              <FaCheckCircle className="text-p" />
               Quality Service Guarenty
             </p>
-            <p className="flex items-center gap-2"><FaCheckCircle className="text-p"/>ROI Based Digital Service</p>
-            <p className="flex items-center gap-2"><FaCheckCircle className="text-p"/>24/7 Customer Support</p>
+            <p className="flex items-center gap-2">
+              <FaCheckCircle className="text-p" />
+              ROI Based Digital Service
+            </p>
+            <p className="flex items-center gap-2">
+              <FaCheckCircle className="text-p" />
+              24/7 Customer Support
+            </p>
           </div>
         </div>
         {/* 4 */}
@@ -75,17 +97,24 @@ const Services = () => {
             Digital Campaign Management
           </h1>
           <p className="">
-          Let our experienced e-commerce agency take your online presence to new heights with expert management of Facebook, Google, and TikTok ads, and a comprehensive approach to driving conversions and increasing your ROI
-
-
+            Let our experienced e-commerce agency take your online presence to
+            new heights with expert management of Facebook, Google, and TikTok
+            ads, and a comprehensive approach to driving conversions and
+            increasing your ROI
           </p>
           <div className="flex flex-col gap-2 mt-4">
             <p className="flex items-center gap-2">
-              <FaCheckCircle className="text-p"/>
+              <FaCheckCircle className="text-p" />
               Quality Service Guarenty
             </p>
-            <p className="flex items-center gap-2"><FaCheckCircle className="text-p"/>ROI Based Digital Service</p>
-            <p className="flex items-center gap-2"><FaCheckCircle className="text-p"/>24/7 Customer Support</p>
+            <p className="flex items-center gap-2">
+              <FaCheckCircle className="text-p" />
+              ROI Based Digital Service
+            </p>
+            <p className="flex items-center gap-2">
+              <FaCheckCircle className="text-p" />
+              24/7 Customer Support
+            </p>
           </div>
         </div>
         {/* 5 */}
@@ -95,17 +124,24 @@ const Services = () => {
             Conversion Rate Optimization
           </h1>
           <p className="">
-          Our experienced team will conduct a comprehensive analysis of your website's user experience, conduct thorough testing, and implement the best strategies to attract, engage, and convert your website visitors.
-
-
+            Our experienced team will conduct a comprehensive analysis of your
+            website's user experience, conduct thorough testing, and implement
+            the best strategies to attract, engage, and convert your website
+            visitors.
           </p>
           <div className="flex flex-col gap-2 mt-4">
             <p className="flex items-center gap-2">
-              <FaCheckCircle className="text-p"/>
+              <FaCheckCircle className="text-p" />
               Quality Service Guarenty
             </p>
-            <p className="flex items-center gap-2"><FaCheckCircle className="text-p"/>ROI Based Digital Service</p>
-            <p className="flex items-center gap-2"><FaCheckCircle className="text-p"/>24/7 Customer Support</p>
+            <p className="flex items-center gap-2">
+              <FaCheckCircle className="text-p" />
+              ROI Based Digital Service
+            </p>
+            <p className="flex items-center gap-2">
+              <FaCheckCircle className="text-p" />
+              24/7 Customer Support
+            </p>
           </div>
         </div>
         {/* 6 */}
@@ -115,17 +151,25 @@ const Services = () => {
             Data tracking and web Analytics
           </h1>
           <p className="">
-          In Data Tracking and Web Analytics Phase, we, track, collect, measure, and analyze data in order to gain insights and make informed decisions. using tools such as Google Analytics, heat mapping software, and user surveys to gather data on website visitors, their behavior, and their preferences
-
-
+            In Data Tracking and Web Analytics Phase, we, track, collect,
+            measure, and analyze data in order to gain insights and make
+            informed decisions. using tools such as Google Analytics, heat
+            mapping software, and user surveys to gather data on website
+            visitors, their behavior, and their preferences
           </p>
           <div className="flex flex-col gap-2 mt-4">
             <p className="flex items-center gap-2">
-              <FaCheckCircle className="text-p"/>
+              <FaCheckCircle className="text-p" />
               Quality Service Guarenty
             </p>
-            <p className="flex items-center gap-2"><FaCheckCircle className="text-p"/>ROI Based Digital Service</p>
-            <p className="flex items-center gap-2"><FaCheckCircle className="text-p"/>24/7 Customer Support</p>
+            <p className="flex items-center gap-2">
+              <FaCheckCircle className="text-p" />
+              ROI Based Digital Service
+            </p>
+            <p className="flex items-center gap-2">
+              <FaCheckCircle className="text-p" />
+              24/7 Customer Support
+            </p>
           </div>
         </div>
       </div>
