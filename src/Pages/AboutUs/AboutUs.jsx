@@ -7,7 +7,7 @@ const AboutUs = () => {
   return (
     <div>
       {Header("About Us", "We do great thing together")}
-      <div className="">
+      <div className="m-10">
         <div className="">
           <h4 className=" text-md text-p">About Us</h4>
           <h1 className="text-4xl font-bold  my-1">Our Background Story</h1>
@@ -32,7 +32,7 @@ const AboutUs = () => {
             </p>
           </div>
         </div>
-        <div className="text-right">
+        <div className="text-right mt-10">
           <h4 className=" text-md text-p">Why Choose Us?</h4>
           <h1 className="text-4xl font-bold  my-1">Why You Should Work with AdAura  
 </h1>

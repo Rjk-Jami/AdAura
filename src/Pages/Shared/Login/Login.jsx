@@ -1,27 +1,68 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { FaLongArrowAltLeft } from "react-icons/fa";
 import useAuth from "../../../Components/hooks/useAuth";
+import axios from "axios";
+import moment from "moment";
 
 export default function Login() {
   const { user, googleLogin, EmailPassLogin, createUser, logout, authLoading } =
     useAuth();
   const navigate = useNavigate();
   let from = location.state?.from?.pathname || "/";
+  const [error, setError] = useState("");
 
-  useEffect(() => {
-    if (user) {
-      navigate(from, { replace: true });
-    }
-  }, [user, authLoading, navigate, from]);
+  // useEffect(() => {
+  //   if (user) {
+  //     navigate(from, { replace: true });
+  //   }
+  // }, [user, authLoading, navigate, from]);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    await EmailPassLogin(email, password);
+    EmailPassLogin(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+
+        if (loggedUser) {
+          setError("");
+          navigate(from, { replace: true });
+        }
+      })
+      .catch((error) => {
+        const errorMessage = error?.message;
+        console.log(errorMessage);
+        setError(errorMessage);
+      });
+  };
+
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        const userData = {
+          name: loggedUser?.displayName,
+          email: loggedUser?.email,
+          photo: loggedUser?.photoURL,
+          joinedDate: moment().format("MMM Do YY"),
+          createdAd: [],
+          bookedAd: [],
+          totalView: 0,
+        };
+        axios.post("http://localhost:3000/user", userData).then((res) => {});
+
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        setLoading(false);
+        console.log(error);
+      });
   };
   return (
     <div className="hero min-h-screen bg-base-200 relative">
@@ -33,9 +74,12 @@ export default function Login() {
       </NavLink>
       <div className="hero-content grid lg:grid-cols-2 w-full mx-auto">
         <div className="text-center lg:text-left">
-          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">Welcome Back!</h1>
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">
+            Welcome Back!
+          </h1>
           <p className="py-6">
-          Please log in to your account to access your dashboard and manage your ads.
+            Please log in to your account to access your dashboard and manage
+            your ads.
           </p>
           <img src="" alt="" />
         </div>
@@ -65,6 +109,9 @@ export default function Login() {
                   className="input input-bordered"
                   required
                 />
+                <div className="text-red-500">
+                {error && <p className="">{error}</p>}
+              </div>
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover">
                     Forgot password?
@@ -72,9 +119,11 @@ export default function Login() {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary bg-p border-none text-white">Login</button>
+                <button className="btn btn-primary bg-p border-none text-white">
+                  Login
+                </button>
               </div>
-
+              
               <p className="text-center">
                 Don&apos;t have any account ?{" "}
                 <Link to={"/signUp"} className="text-p font-semibold">
@@ -86,10 +135,7 @@ export default function Login() {
               <div className="flex flex-col gap-2 mx-7 mb-7">
                 <div className="w-1/2 mx-auto flex justify-center flex-col items-center">
                   <div className="divider divider-neutral">or</div>
-                  <button
-                    onClick={() => googleLogin()}
-                    className=""
-                  >
+                  <button onClick={() => handleGoogleLogin()} className="">
                     <FcGoogle className="text-3xl" />
                   </button>
                 </div>

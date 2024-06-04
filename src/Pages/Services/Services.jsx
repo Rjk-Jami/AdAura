@@ -13,7 +13,7 @@ const Services = () => {
           <h1 className="font-bold text-2xl my-2">
             Social Media Business Strategy
           </h1>
-          <p className="">
+          <p className=" max-w-3xl">
             As an Social Media business development agency, we offer a
             personalized approach to each of our clients, taking into account
             their unique needs and goals, and providing a comprehensive strategy
@@ -40,7 +40,7 @@ const Services = () => {
           <h1 className="font-bold text-2xl my-2">
             Store Design and Development
           </h1>
-          <p className="">
+          <p className=" max-w-3xl">
             A Standard Store combination of technical expertise, creativity, and
             user-centric design principles. The process requires careful
             planning, attention to detail, and a deep understanding of the
@@ -68,7 +68,7 @@ const Services = () => {
           <h1 className="font-bold text-2xl my-2">
             Sales & Brand oriented Content
           </h1>
-          <p className="">
+          <p className=" max-w-3xl">
             Content, taking various forms like blogs, social media updates,
             product descriptions, and ads, requires different content formats
             such as static design, motion graphics, and videos, all customized
@@ -96,7 +96,7 @@ const Services = () => {
           <h1 className="font-bold text-2xl my-2">
             Digital Campaign Management
           </h1>
-          <p className="">
+          <p className=" max-w-3xl">
             Let our experienced e-commerce agency take your online presence to
             new heights with expert management of Facebook, Google, and TikTok
             ads, and a comprehensive approach to driving conversions and
@@ -123,7 +123,7 @@ const Services = () => {
           <h1 className="font-bold text-2xl my-2">
             Conversion Rate Optimization
           </h1>
-          <p className="">
+          <p className=" max-w-3xl">
             Our experienced team will conduct a comprehensive analysis of your
             website's user experience, conduct thorough testing, and implement
             the best strategies to attract, engage, and convert your website
@@ -150,7 +150,7 @@ const Services = () => {
           <h1 className="font-bold text-2xl my-2">
             Data tracking and web Analytics
           </h1>
-          <p className="">
+          <p className=" max-w-3xl">
             In Data Tracking and Web Analytics Phase, we, track, collect,
             measure, and analyze data in order to gain insights and make
             informed decisions. using tools such as Google Analytics, heat

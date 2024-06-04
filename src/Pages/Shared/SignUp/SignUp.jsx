@@ -3,6 +3,8 @@ import { FaLongArrowAltLeft } from "react-icons/fa";
 import useAuth from "../../../Components/hooks/useAuth";
 import { useEffect } from "react";
 import { FcGoogle } from "react-icons/fc";
+import axios from "axios";
+import moment from "moment";
 
 const SignUp = () => {
     const {user,
@@ -12,19 +14,37 @@ const SignUp = () => {
         logout,
         authLoading} =useAuth() 
         const navigate = useNavigate();
-        const handleSubmit = async(e) => {
+        let from = location.state?.from?.pathname || "/";
+        const handleSubmit =(e) => {
             e.preventDefault();
             const form = e.target;
             const email = form.email.value;
             const password = form.password.value;
-           await createUser(email, password);
+           createUser(email, password)
+           .then((result) => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+            const userData = {
+              name: '',
+              email: email,
+              photo: '',
+              joinedDate: moment().format("MMM Do YY"),
+              createdAd: [],
+              bookedAd: [],
+              totalView: 0,
+            };
+            axios.post("http://localhost:3000/user", userData).then((res) => {});
+    
+            navigate(from, { replace: true });
+          })
+          .catch((error) => {
+            console.log(error);
+          });
           };
-          let from = location.state?.from?.pathname || "/";
-          useEffect(() => {
-            if (user) {
-              navigate(from, { replace: true });
-            }
-          }, [user, authLoading, navigate, from]);
+          
+          
+          
+          
     return (
         <div className="hero min-h-screen bg-base-200 relative">
        <NavLink to={from}>
