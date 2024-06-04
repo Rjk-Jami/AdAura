@@ -34,7 +34,7 @@ const logout = ()=>{
     const unsubscribe = onAuthStateChanged(auth, currentUser =>{
         setUser(currentUser)
         if(currentUser){
-            axios.post('http://localhost:3000/jwt', { email: currentUser.email })
+            axios.post('https://ad-aura-server.vercel.app/jwt', { email: currentUser.email })
             .then(data => {
                 if(data.data.token){
                     localStorage.setItem('access-token', data.data.token)
