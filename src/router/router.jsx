@@ -10,6 +10,14 @@ import Services from "../Pages/Services/Services";
 import Contact from "../Pages/Contact/Contact";
 import AboutUs from "../Pages/AboutUs/AboutUs";
 import Blog from "../Pages/Blog/Blog";
+import DashBoardLayout from "../layouts/DashBoardLayout";
+import PrivateRoute from "./PrivateRoute";
+import DashboardHome from "../Pages/DashboardHome/DashboardHome";
+import ViewProfile from "../Pages/DashBoard/ViewProfile/ViewProfile";
+import EditProfile from "../Pages/DashBoard/EditProfile/EditProfile";
+import CreateAd from "../Pages/DashBoard/CreateAd/CreateAd";
+import ManageAd from "../Pages/DashBoard/ManageAd/ManageAd";
+import EditAd from "../Pages/DashBoard/EditAd/EditAd";
  export const router = createBrowserRouter([
     {
       path: "/",
@@ -45,5 +53,39 @@ import Blog from "../Pages/Blog/Blog";
     {
       path: "/signUp",
       element: <SignUp />,
+    },
+    {
+      path: "/dashboard",
+      element: (
+        <PrivateRoute>
+          <DashBoardLayout />
+        </PrivateRoute>
+      ),
+      children: [
+        {
+          index: true,
+          element: <DashboardHome />,
+        },
+        {
+          path: "viewProfile",
+          element: <ViewProfile />,
+        },
+        {
+          path: "editProfile/:email",
+          element: <EditProfile />,
+        },
+        {
+          path: "createAd",
+          element: <CreateAd />,
+        },
+        {
+          path: "manageAd",
+          element: <ManageAd />,
+        },
+        {
+          path: "editAd/:id",
+          element: <EditAd/>,
+        },
+      ],
     },
   ]);

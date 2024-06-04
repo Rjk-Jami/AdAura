@@ -28,6 +28,7 @@ const SignUp = () => {
               name: '',
               email: email,
               photo: '',
+              phone:"",
               joinedDate: moment().format("MMM Do YY"),
               createdAd: [],
               bookedAd: [],

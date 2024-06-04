@@ -152,21 +152,21 @@ const Navbar = () => {
                 >
                   <li className="w-auto">
                     <NavLink
-                      to={"/viewProfile"}
+                      to={"/dashboard/viewProfile"}
                       className="justify-start flex flex-row-reverse gap-2 items-center text-md text-ad cursor-pointer "
                     >
                       <GrView className="font-semibold  " />
                       <p>View Profile</p>
-                    </NavLink>{" "}
+                    </NavLink>
                   </li>
                   <li className="w-auto">
                     <NavLink
-                      to={"/EditProfile"}
+                      to={"/dashboard/editProfile"}
                       className="justify-start flex flex-row-reverse gap-2 items-center text-md text-ad cursor-pointer "
                     >
                       <FiSettings className="font-semibold  " />
                       <p>Edit Profile</p>
-                    </NavLink>{" "}
+                    </NavLink>
                   </li>
 
                   <li className="w-auto">

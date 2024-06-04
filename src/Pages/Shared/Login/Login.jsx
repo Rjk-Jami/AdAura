@@ -50,6 +50,7 @@ export default function Login() {
           name: loggedUser?.displayName,
           email: loggedUser?.email,
           photo: loggedUser?.photoURL,
+          phone:"",
           joinedDate: moment().format("MMM Do YY"),
           createdAd: [],
           bookedAd: [],
