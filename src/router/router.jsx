@@ -18,6 +18,7 @@ import EditProfile from "../Pages/DashBoard/EditProfile/EditProfile";
 import CreateAd from "../Pages/DashBoard/CreateAd/CreateAd";
 import ManageAd from "../Pages/DashBoard/ManageAd/ManageAd";
 import EditAd from "../Pages/DashBoard/EditAd/EditAd";
+import AdsDetails from "../Pages/DashBoard/AdsDetails/AdsDetails";
  export const router = createBrowserRouter([
     {
       path: "/",
@@ -41,7 +42,7 @@ import EditAd from "../Pages/DashBoard/EditAd/EditAd";
           element: <AboutUs></AboutUs>
         },
         {
-          path: '/blog',
+          path: '/packages',
           element: <Blog></Blog>
         },
       ],
@@ -85,6 +86,10 @@ import EditAd from "../Pages/DashBoard/EditAd/EditAd";
         {
           path: "editAd/:id",
           element: <EditAd/>,
+        },
+        {
+          path: "adDetails/:id",
+          element: <AdsDetails/>,
         },
       ],
     },

@@ -19,7 +19,7 @@ console.log(ads)
     <div className="">
       {Header("Packages", "Visit our Packages")}
 
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 my-20 w-2/3 mx-auto ">
           { ads && ads.map((ad) => (
               <AdCard key={ad?._id} ad={ad} />
             ))}

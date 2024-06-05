@@ -23,7 +23,7 @@ useEffect(()=>{
             
             </div>
             <div className="flex justify-center">
-                <NavLink to={'/blog'} className='btn btn-link no-underline  text-md text-p'>See More</NavLink>
+                <NavLink to={'/packages'} className='btn btn-link no-underline  text-md text-p'>See More</NavLink>
             </div>
             
         </div>

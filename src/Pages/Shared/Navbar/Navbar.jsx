@@ -72,7 +72,7 @@ const Navbar = () => {
               ? `${activeTrue} `
               : `relative text-ad hover:after:bg-[#fd4822] hover:after:absolute hover:after:h-[2px] hover:after:-bottom-1 hover:after:left-0 hover:after:w-[55%]`
           }
-          to={"/blog"}
+          to={"/packages"}
         >
           Packages
         </NavLink>

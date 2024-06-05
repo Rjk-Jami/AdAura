@@ -56,9 +56,12 @@ export default function Login() {
           bookedAd: [],
           totalView: 0,
         };
-        axios.post("https://ad-aura-server.vercel.app/user", userData).then((res) => {});
+        axios.post("https://ad-aura-server.vercel.app/user", userData).then((res) => {
+          
+          
+        });
 
-        navigate(from, { replace: true });
+       
       })
       .catch((error) => {
         setLoading(false);

@@ -66,7 +66,7 @@ export default function AdsRow({ ad, setAds }) {
       <td>{ad?.booked}</td>
       <td>{ad?.view}</td>
       <td className="flex gap-4 flex-col mx-auto">
-        <NavLink to={`/dashboard/manageAd`} className=" text-lg">
+        <NavLink to={`/dashboard/adDetails/${ad?._id}`} className=" text-lg">
           <FaEye className=" text-p hover:text-black" />
         </NavLink>
         <Link to={`/dashboard/editAd/${ad?._id}`} className=" text-lg">

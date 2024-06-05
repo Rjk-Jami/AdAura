@@ -4,9 +4,9 @@ import { NavLink } from "react-router-dom";
 
 export default function AdCard({ ad }) {
   return (
-    <div className="card  bg-base-100 shadow-xl border border-white hover:border-black my-20">
+    <div className="card  bg-base-100 shadow-xl  border border-stone-400 hover:border-black ">
       <figure>
-        <img src={ad?.image} alt="food" className="max-w-50" />
+        <img src={ad?.image} alt="food" className="w-52 h-52" />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{ad?.name}</h2>
@@ -14,7 +14,7 @@ export default function AdCard({ ad }) {
         <h2 className="card-title">Duration: {ad?.duration}</h2>
         
         <div className="card-actions justify-between items-center">
-            <NavLink to={`/`} className="btn btn-outline btn-success hover:text-white">See Details</NavLink>
+            <NavLink to={`/dashboard/adDetails/${ad?._id}`} className="btn btn-outline btn-success hover:text-white">See Details</NavLink>
             
           <div className="badge badge-outline">{ad?.category}</div>
             </div>
